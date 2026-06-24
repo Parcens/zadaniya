@@ -1,0 +1,114 @@
+# 1. Площадь круга
+print("Задача 1. Площадь круга")
+def circle(radius):
+    return 3.14 * radius * radius
+
+print(circle(4))
+print(circle(1))
+print()
+
+# 2. На три
+print("Задача 2. Проверка деления на 3")
+def three(number):
+    return number % 3 == 0
+
+print(three(4))
+print(three(3))
+print()
+
+# 3. Максимум в списке
+print("Задача 3. Максимум в списке")
+def maxList(lst):
+    if len(lst) == 0:
+        return None
+    max_val = lst[0]
+    for item in lst:
+        if item > max_val:
+            max_val = item
+    return max_val
+
+mylist = [1, 3, 2]
+print(maxList(mylist))
+print()
+
+# 4. Сколько четных
+print("Задача 4. Количество четных элементов")
+def evenCounter(lst):
+    count = 0
+    for item in lst:
+        if item % 2 == 0:
+            count += 1
+    return count
+
+mylist = [1, 10, 2, 4, 6]
+evens = evenCounter(mylist)
+print(evens)
+print()
+
+# 5. Уникальные
+print("Задача 5. Уникальные элементы")
+def unique(lst):
+    result = []
+    for item in lst:
+        if item not in result:
+            result.append(item)
+    return result
+
+mylist = [1, 1, 2, 1, 3, 2, 3]
+print(unique(mylist))
+print()
+
+# Дополнительные функции из теории
+print("Дополнительные функции из теории:")
+
+# Квадрат
+def square(number):
+    return number * number
+
+print("Квадрат 5 =", square(5))
+
+# Периметр
+def perimetr(a, b):
+    return 2 * (a + b)
+
+print("Периметр 4x3 =", perimetr(4, 3))
+
+# Четное число
+def isEven(x):
+    return x % 2 == 0
+
+print("isEven(10) =", isEven(10))
+print("isEven(11) =", isEven(11))
+
+# Сумма списка
+def amountList(lst):
+    amount = 0
+    for x in lst:
+        amount += x
+    return amount
+
+mylist = [1, 2, 4, 8, 16]
+print("Сумма списка", mylist, "=", amountList(mylist))
+
+# Фибоначчи
+def fib(n):
+    a, b = 0, 1
+    if n == 0:
+        return 0
+    for i in range(1, n):
+        a, b = b, a + b
+    return b
+
+print("fib(5) =", fib(5))
+print("fib(10) =", fib(10))
+
+# Факториал
+def fact(n):
+    result = 1
+    while n > 1:
+        result *= n
+        n -= 1
+    return result
+
+print("fact(5) =", fact(5))
+print("fact(10) =", fact(10))
