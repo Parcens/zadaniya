@@ -1,0 +1,107 @@
+# 1. Пользователь
+def task1_user():
+    print("Задача 1. Пользователь")
+    firstname = 'Ivan'
+    lastname = 'Petrov'
+    age = 25
+    user = dict(firstname=firstname, lastname=lastname, age=age)
+    print(user)
+    print()
+
+# 2. Найти слово
+def task2_frequent_word():
+    print("Задача 2. Самое часто встречающееся слово")
+    list_of_words = ['hello', 'hello', 'hi', 'hello', 'hi', 'world']
+    words = {}
+    for word in list_of_words:
+        words[word] = words.get(word, 0) + 1
+    freq_word = max(words, key=words.get)
+    print("Самое частотное слово:", freq_word)
+    print("Количество повторений:", words[freq_word])
+    print()
+
+# 3. Фрукты
+def task3_fruits():
+    print("Задача 3. Фрукты")
+    fruits = {}
+    fruits_data = [
+        ('Яблоко', 3),
+        ('Апельсин', 3),
+        ('Мандарин', 10),
+        ('Банан', 5)
+    ]
+    for name, count in fruits_data:
+        fruits[name] = count
+    print(fruits)
+    print()
+
+# 4. Старший и младший
+def task4_youngest_oldest():
+    print("Задача 4. Старший и младший")
+    friends = []
+    friends_data = [
+        ('Иван', 11),
+        ('Саша', 12),
+        ('Леша', 10),
+        ('Маша', 15)
+    ]
+    for name, age in friends_data:
+        friends.append({'name': name, 'age': age})
+    
+    youngest = min(friends, key=lambda x: x['age'])
+    oldest = max(friends, key=lambda x: x['age'])
+    print("Самый младший:", youngest['name'])
+    print("Самый старший:", oldest['name'])
+    print()
+
+# 5. Еще немного о друзьях
+def task5_avg_age_longest_name():
+    print("Задача 5. Средний возраст и самое длинное имя")
+    friends = []
+    friends_data = [
+        ('Иван', 12),
+        ('Иннокентий', 20),
+        ('Леша', 10),
+        ('Александр', 25)
+    ]
+    for name, age in friends_data:
+        friends.append({'name': name, 'age': age})
+    
+    total_age = sum(friend['age'] for friend in friends)
+    avg_age = total_age / len(friends)
+    longest_name = max(friends, key=lambda x: len(x['name']))
+    print("Средний возраст:", avg_age)
+    print("Самое длинное имя:", longest_name['name'])
+    print()
+
+# 6. Английский словарь
+def task6_english_dict():
+    print("Задача 6. Английский словарь")
+    english_dict = {}
+    translations = [
+        ('apple', 'яблоко'),
+        ('apple', 'яблочко'),
+        ('book', 'книга'),
+        ('book', 'книжка'),
+        ('cat', 'кот'),
+        ('cat', 'кошка'),
+        ('cat', 'котёнок')
+    ]
+    
+    for eng, rus in translations:
+        if eng not in english_dict:
+            english_dict[eng] = []
+        english_dict[eng].append(rus)
+    
+    print("Английский словарь:")
+    for eng, rus_list in english_dict.items():
+        print(f"{eng}: {', '.join(rus_list)}")
+    print()
+
+# Вызов всех функций
+task1_user()
+task2_frequent_word()
+task3_fruits()
+task4_youngest_oldest()
+task5_avg_age_longest_name()
+task6_english_dict()
