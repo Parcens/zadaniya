@@ -1,0 +1,93 @@
+# 1. Четные от A до B
+print("Задача 1. Четные числа от A до B")
+A = 10
+B = 1
+while A >= B:
+    if A % 2 == 0:
+        print(A)
+    A -= 1
+print()
+
+# 2. От A до B на три
+print("Задача 2. Числа от A до B, делящиеся на 3")
+A = 1
+B = 15
+while A <= B:
+    if A % 3 == 0:
+        print(A)
+    A += 1
+print()
+
+# 3. Сумма чисел
+print("Задача 3. Сумма введенных чисел (до 0)")
+numbers = [1, 15, 10, 11, 2, 0]
+summa = 0
+i = 0
+n = numbers[i]
+while n != 0:
+    summa += n
+    i += 1
+    n = numbers[i]
+print(f'Сумма равна: {summa}')
+print()
+
+# 4. Максимум
+print("Задача 4. Максимальное введенное число (до 0)")
+numbers = [1, 15, 10, 11, 2, 0]
+i = 0
+n = numbers[i]
+if n != 0:
+    maximum = n
+    while n != 0:
+        if n > maximum:
+            maximum = n
+        i += 1
+        n = numbers[i]
+    print(f'Максимум равен: {maximum}')
+else:
+    print('Нет введенных чисел')
+print()
+
+# 5. Минимум
+print("Задача 5. Минимальное введенное число (до 0)")
+numbers = [1, 15, 10, 11, 2, 0]
+i = 0
+n = numbers[i]
+if n != 0:
+    minimum = n
+    while n != 0:
+        if n < minimum:
+            minimum = n
+        i += 1
+        n = numbers[i]
+    print(f'Минимум равен: {minimum}')
+else:
+    print('Нет введенных чисел')
+print()
+
+# 6. Факториал
+print("Задача 6. Факториал числа N")
+N = 5
+factorial = 1
+i = 1
+while i <= N:
+    factorial *= i
+    i += 1
+print(factorial)
+print()
+
+# 7. Фибоначчи (финальный босс)
+print("Задача 7. N-ное число Фибоначчи")
+N = 10
+if N == 1 or N == 2:
+    print(1)
+else:
+    prev1 = 1
+    prev2 = 1
+    i = 3
+    while i <= N:
+        current = prev1 + prev2
+        prev1 = prev2
+        prev2 = current
+        i += 1
+    print(current)
