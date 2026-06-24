@@ -1,0 +1,146 @@
+from random import randint
+
+# 1. Создайте список из 10 четных чисел и выведите его с помощью цикла for
+print("Задача 1. Список из 10 четных чисел")
+even_numbers = list(range(0, 20, 2))
+for num in even_numbers:
+    print(num, end=' ')
+print('\n')
+
+# 2. Создайте список из 5 элементов. Сделайте срез от второго индекса до четвертого
+print("Задача 2. Срез от второго до четвертого индекса")
+my_list = [10, 20, 30, 40, 50]
+print("Исходный список:", my_list)
+print("Срез [2:4]:", my_list[2:4])
+print()
+
+# 3. Создайте пустой список и добавьте в него 10 случайных чисел
+print("Задача 3. Список из 10 случайных чисел")
+random_list = []
+for i in range(10):
+    random_list.append(randint(1, 100))
+print("Случайный список:", random_list)
+print()
+
+# 4. Удалите все элементы из списка, созданного в задании 3
+print("Задача 4. Очистка списка")
+random_list.clear()
+print("Список после очистки:", random_list)
+print()
+
+# 5. Создайте список из строки и удалите из него символы 'a', 'e', 'o'
+print("Задача 5. Удаление символов 'a', 'e', 'o'")
+user_string = 'Hello world'
+char_list = list(user_string)
+print("Строка:", user_string)
+print("Список символов:", char_list)
+i = 0
+while i < len(char_list):
+    if char_list[i] in ['a', 'e', 'o']:
+        char_list.pop(i)
+    else:
+        i += 1
+print("Список после удаления 'a', 'e', 'o':", char_list)
+print()
+
+# 6. Даны два списка, удалите все элементы первого списка из второго
+print("Задача 6. Удаление элементов первого списка из второго")
+a = [1, 3, 4, 5]
+b = [4, 5, 6, 7]
+print("Первый список:", a)
+print("Второй список:", b)
+for item in a:
+    while item in b:
+        b.remove(item)
+print("Второй список после удаления:", b)
+print()
+
+# 7. Создайте список из случайных чисел и найдите наибольший элемент
+print("Задача 7. Наибольший элемент")
+task7_list = [randint(1, 100) for _ in range(10)]
+print("Список:", task7_list)
+maximum = task7_list[0]
+for num in task7_list:
+    if num > maximum:
+        maximum = num
+print("Наибольший элемент:", maximum)
+print()
+
+# 8. Найдите наименьший элемент в списке из задания 7
+print("Задача 8. Наименьший элемент")
+minimum = task7_list[0]
+for num in task7_list:
+    if num < minimum:
+        minimum = num
+print("Наименьший элемент:", minimum)
+print()
+
+# 9. Найдите сумму элементов списка из задания 7
+print("Задача 9. Сумма элементов")
+summa = 0
+for num in task7_list:
+    summa += num
+print("Сумма элементов:", summa)
+print()
+
+# 10. Найдите среднее арифметическое элементов списка из задания 7
+print("Задача 10. Среднее арифметическое")
+average = summa / len(task7_list)
+print("Среднее арифметическое:", average)
+print()
+
+# Сложные задачи
+
+# 1. Найдите номер последнего локального максимума
+print("Сложная задача 1. Последний локальный максимум")
+complex_list = [randint(1, 20) for _ in range(10)]
+print("Список:", complex_list)
+last_max_index = -1
+for i in range(1, len(complex_list) - 1):
+    if complex_list[i] > complex_list[i-1] and complex_list[i] > complex_list[i+1]:
+        last_max_index = i
+if last_max_index != -1:
+    print("Индекс последнего локального максимума:", last_max_index)
+    print("Значение:", complex_list[last_max_index])
+else:
+    print("Локальных максимумов нет")
+print()
+
+# 2. Найдите максимальное количество одинаковых элементов
+print("Сложная задача 2. Максимальное количество одинаковых элементов")
+print("Список:", complex_list)
+max_count = 0
+for i in range(len(complex_list)):
+    count = 0
+    for j in range(len(complex_list)):
+        if complex_list[i] == complex_list[j]:
+            count += 1
+    if count > max_count:
+        max_count = count
+print("Максимальное количество одинаковых элементов:", max_count)
+print()
+
+# 3. Найдите второй максимум
+print("Сложная задача 3. Второй максимум")
+print("Список:", complex_list)
+unique_list = []
+for num in complex_list:
+    if num not in unique_list:
+        unique_list.append(num)
+unique_list.sort(reverse=True)
+if len(unique_list) >= 2:
+    print("Первый максимум:", unique_list[0])
+    print("Второй максимум:", unique_list[1])
+else:
+    print("Недостаточно уникальных элементов")
+print()
+
+# 4. Найдите количество различных элементов
+print("Сложная задача 4. Количество различных элементов")
+print("Список:", complex_list)
+different_elements = []
+for num in complex_list:
+    if num not in different_elements:
+        different_elements.append(num)
+print("Количество различных элементов:", len(different_elements))
+print("Различные элементы:", different_elements)
