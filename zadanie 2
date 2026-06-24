@@ -1,0 +1,83 @@
+# 1. Меньшее из двух
+print("Задача 1. Меньшее из двух")
+a = 8
+b = 3
+if a < b:
+    print(a)
+else:
+    print(b)
+print()
+
+# 2. Четырехзначное?
+print("Задача 2. Четырехзначное?")
+number = 2024
+if 1000 <= number <= 9999:
+    print('YES')
+else:
+    print('NO')
+print()
+
+# 3. Треугольник?
+print("Задача 3. Треугольник?")
+a = 3
+b = 4
+c = 5
+if a + b > c and a + c > b and b + c > a:
+    print('YES')
+else:
+    print('NO')
+print()
+
+# 4. Время суток
+print("Задача 4. Время суток")
+hours = 14
+if 5 <= hours <= 11:
+    print('Утро')
+elif 12 <= hours <= 17:
+    print('День')
+elif 18 <= hours <= 22:
+    print('Вечер')
+elif 23 <= hours <= 4 or hours == 0:
+    print('Ночь')
+else:
+    print('Ошибка')
+print()
+
+# 5. День недели
+print("Задача 5. День недели")
+day = 3
+if day == 6 or day == 7:
+    print('Выходные')
+elif 1 <= day <= 5:
+    print('Будни')
+else:
+    print('Ошибка')
+print()
+
+# 6. Описание числа
+print("Задача 6. Описание числа")
+number = -7
+if number == 0:
+    print('ноль')
+else:
+    if number > 0:
+        sign = 'положительное'
+    else:
+        sign = 'отрицательное'
+    if number % 2 == 0:
+        parity = 'четное'
+    else:
+        parity = 'нечетное'
+    print(sign, parity, 'число')
+print()
+
+# 7. Конь (финальный босс)
+print("Задача 7. Конь")
+x1, y1 = 1, 1
+x2, y2 = 3, 2
+dx = abs(x1 - x2)
+dy = abs(y1 - y2)
+if (dx == 2 and dy == 1) or (dx == 1 and dy == 2):
+    print('YES')
+else:
+    print('NO')
